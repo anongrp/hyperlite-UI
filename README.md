@@ -1,5 +1,4 @@
 ## <p align='center'> Hyperlite-UI </p>
-------
 
 #### Setup
 ```bash

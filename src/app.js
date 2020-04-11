@@ -39,7 +39,7 @@ db.init((err) => {
     console.log('Database Initialized')
     app.listen(3000, () => {
         console.log(`Hyperlite is listening on port ${3000}`)
-    });
+    })
 })
 
 process.on('exit', () => {

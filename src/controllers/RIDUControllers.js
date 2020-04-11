@@ -22,25 +22,25 @@ module.exports.insertMany = (db, col, data) => {
 
 module.exports.delete = (db, col, query) => {
     const collection = hyperlite.getDB(db).collection(col)
-    return collection.delete(query)
+    return collection.deleteMany(query)
 }
 
-module.exports.deleteMany = (db, col, query) => {
+module.exports.deleteOne = (db, col, query) => {
     const collection = hyperlite.getDB(db).collection(col)
-    return collection.deleteMany(query)
+    return collection.deleteOne(query)
 }
 
 module.exports.update = (db, col, query, data) => {
     const collection = hyperlite.getDB(db).collection(col)
-    return collection.update(query, data)
+    return collection.updateMany(query, {$set: data})
 }
 
-module.exports.updateMany = (db, col, query, data) => {
+module.exports.updateOne = (db, col, query, data) => {
     const collection = hyperlite.getDB(db).collection(col)
-    return collection.updateMany(query, data)
+    return collection.updateOne(query, {$set: data})
 }
 
-module.exports.pipeline = (db, col, pipeline) => {
+module.exports.pipeline = (db, col, pipeline) => {    
     const collection = hyperlite.getDB(db).collection(col)
     return collection.aggregate(pipeline)
 }

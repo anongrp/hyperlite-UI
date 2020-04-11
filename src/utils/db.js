@@ -15,5 +15,5 @@ module.exports = {
         _client.close()
         console.log('Connection Disposed!')
     },
-    client: () => _client
+    getDB: (db) => _client.db(db)
 }

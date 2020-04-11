@@ -15,7 +15,7 @@ app.use(cors())
 app.use(requestParser())
 
 app.get('/', (req, res) => {
-    res.send().json({
+    res.json({
         message: 'Welcome to Hyperlite'
     })
 })
